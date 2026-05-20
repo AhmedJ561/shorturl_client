@@ -2,14 +2,7 @@
 import { useState } from "react";
 import { Globe, Zap, Copy, Check } from "lucide-react";
 
-const createShortUrl = async (url) => {
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-  return { id: Math.random().toString(36).substr(2, 8) };
-};
-
-const getShortUrl = async (id) => {
-  return `https://sh.rt/${id}`;
-};
+import { createShortUrl, getShortUrl } from "../api";
 
 const UrlShortenerForm = () => {
   const [inputUrl, setInputUrl] = useState("");
